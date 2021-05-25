@@ -30,14 +30,17 @@
         @csrf
         @if ($errors->any())
             <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
+                @foreach ($errors->all() as $error)
+                    <ul>
                         <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+                    </ul>
+                @endforeach
             </div>
         @endif
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <x-alert type="danger" :session="session('danger')"/>
+
         <label for="inputEmail" class="visually-hidden">Email address</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" value="{{ old('email') }}" autofocus>
         <label for="inputPassword" class="visually-hidden">Password</label>
