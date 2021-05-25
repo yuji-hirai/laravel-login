@@ -13,17 +13,22 @@ class Alert extends Component
      */
     public $type;
 
-
+    /**
+     * 警告メッセージ
+     *
+     * @var string
+     */
+    public $session;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type)
+    public function __construct($type,$session)
     {
         $this->type = $type;
-
+        $this->session = $session;
     }
 
     /**
